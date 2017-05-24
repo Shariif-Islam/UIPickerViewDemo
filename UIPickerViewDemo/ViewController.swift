@@ -31,16 +31,19 @@ class ViewController: UIViewController {
 }
 
 extension ViewController : UIPickerViewDelegate {
-
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
-        // set the title of each row
-        return "\(temparatureRange.values[row])  C"
-    }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         // action for selected row
         displayConvertedValues(forSelected: row)
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
+        
+        let titleData = "\(temparatureRange.values[row])  C"
+        
+        // Customize text color,font of picker view
+        let myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 15.0)!,NSForegroundColorAttributeName:UIColor.yellow])
+        return myTitle
     }
     
 }
