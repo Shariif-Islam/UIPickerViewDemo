@@ -9,17 +9,38 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet var temparatureRange: TemparatureRange!
+    @IBOutlet weak var lb_value: UILabel!
+    @IBOutlet weak var pickerView: UIPickerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    func displayConvertedValues(forSelected row :Int) {
+    
+        // get the values from data model
+        let degress = temparatureRange.values[row]
+        lb_value.text = "\(Converter.shared.degressFarenheight(degress: degress))  F" // Convert that values to farenheight
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
-
 }
 
+extension ViewController : UIPickerViewDelegate {
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        // set the title of each row
+        return "\(temparatureRange.values[row])  C"
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        // action for selected row
+        displayConvertedValues(forSelected: row)
+    }
+    
+}

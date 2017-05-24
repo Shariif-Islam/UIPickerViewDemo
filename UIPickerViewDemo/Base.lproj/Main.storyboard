@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UIPickerViewDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,10 +20,41 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temparature" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMG-Qc-Uus">
+                                <rect key="frame" x="20" y="120" width="335" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CiQ-F6-JZ6">
+                                <rect key="frame" x="0.0" y="451" width="375" height="216"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="A8T-QO-fqL" id="HgM-Aw-VMI"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="v1Y-Ki-Zx6"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="QMG-Qc-Uus" secondAttribute="trailing" constant="20" id="B4n-FK-Uch"/>
+                            <constraint firstItem="QMG-Qc-Uus" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="LfP-yj-A6u"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="CiQ-F6-JZ6" secondAttribute="bottom" id="OKE-Dg-8sB"/>
+                            <constraint firstAttribute="trailing" secondItem="CiQ-F6-JZ6" secondAttribute="trailing" id="XsX-fr-7N8"/>
+                            <constraint firstItem="CiQ-F6-JZ6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="apv-AE-8n7"/>
+                            <constraint firstItem="QMG-Qc-Uus" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lqf-d3-C0s"/>
+                            <constraint firstItem="QMG-Qc-Uus" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="q7m-Mc-oKA"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lb_value" destination="QMG-Qc-Uus" id="sr7-1J-6Sr"/>
+                        <outlet property="pickerView" destination="CiQ-F6-JZ6" id="D2k-kV-XD5"/>
+                        <outlet property="temparatureRange" destination="A8T-QO-fqL" id="awE-uY-RMy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="A8T-QO-fqL" customClass="TemparatureRange" customModule="UIPickerViewDemo" customModuleProvider="target"/>
             </objects>
         </scene>
     </scenes>

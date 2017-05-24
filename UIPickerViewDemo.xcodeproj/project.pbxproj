@@ -12,6 +12,8 @@
 		128EB0FD1ED55D72008C9207 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 128EB0FB1ED55D72008C9207 /* Main.storyboard */; };
 		128EB0FF1ED55D72008C9207 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 128EB0FE1ED55D72008C9207 /* Assets.xcassets */; };
 		128EB1021ED55D72008C9207 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 128EB1001ED55D72008C9207 /* LaunchScreen.storyboard */; };
+		128EB10A1ED55F24008C9207 /* TemparatureRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128EB1091ED55F24008C9207 /* TemparatureRange.swift */; };
+		128EB10C1ED561D9008C9207 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128EB10B1ED561D9008C9207 /* Converter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		128EB0FE1ED55D72008C9207 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		128EB1011ED55D72008C9207 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		128EB1031ED55D72008C9207 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		128EB1091ED55F24008C9207 /* TemparatureRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemparatureRange.swift; sourceTree = "<group>"; };
+		128EB10B1ED561D9008C9207 /* Converter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +59,39 @@
 			isa = PBXGroup;
 			children = (
 				128EB0F71ED55D71008C9207 /* AppDelegate.swift */,
-				128EB0F91ED55D71008C9207 /* ViewController.swift */,
+				128EB10D1ED5631C008C9207 /* View */,
+				128EB10E1ED56324008C9207 /* Model */,
+				128EB10F1ED5632E008C9207 /* Controller */,
 				128EB0FB1ED55D72008C9207 /* Main.storyboard */,
 				128EB0FE1ED55D72008C9207 /* Assets.xcassets */,
 				128EB1001ED55D72008C9207 /* LaunchScreen.storyboard */,
 				128EB1031ED55D72008C9207 /* Info.plist */,
 			);
 			path = UIPickerViewDemo;
+			sourceTree = "<group>";
+		};
+		128EB10D1ED5631C008C9207 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				128EB0F91ED55D71008C9207 /* ViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		128EB10E1ED56324008C9207 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				128EB1091ED55F24008C9207 /* TemparatureRange.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		128EB10F1ED5632E008C9207 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				128EB10B1ED561D9008C9207 /* Converter.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +126,7 @@
 				TargetAttributes = {
 					128EB0F31ED55D71008C9207 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 9NGTNE5FRE;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -137,6 +168,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				128EB0FA1ED55D71008C9207 /* ViewController.swift in Sources */,
+				128EB10A1ED55F24008C9207 /* TemparatureRange.swift in Sources */,
+				128EB10C1ED561D9008C9207 /* Converter.swift in Sources */,
 				128EB0F81ED55D71008C9207 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -260,6 +293,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9NGTNE5FRE;
 				INFOPLIST_FILE = UIPickerViewDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shariif..UIPickerViewDemo;
@@ -272,6 +306,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9NGTNE5FRE;
 				INFOPLIST_FILE = UIPickerViewDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shariif..UIPickerViewDemo;
